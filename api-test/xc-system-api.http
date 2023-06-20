@@ -1,0 +1,3 @@
+
+### 查询某个课程的课程计划
+GET {{system_host}}/system/dictionary/all
