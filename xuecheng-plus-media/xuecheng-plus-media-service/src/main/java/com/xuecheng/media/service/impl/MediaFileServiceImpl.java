@@ -56,6 +56,8 @@ public class MediaFileServiceImpl implements MediaFileService {
     @Value("${minio.bucket.videofiles}")
     private String bucket_video;
 
+    @Autowired
+    MediaFileService currentProxy;
 
     @Override
     public PageResult<MediaFiles> queryMediaFiels(Long companyId, PageParams pageParams, QueryMediaParamsDto queryMediaParamsDto) {
@@ -141,6 +143,7 @@ public class MediaFileServiceImpl implements MediaFileService {
      * @author Mr.M
      * @date 2022/10/12 21:22
      */
+
     @Transactional
     public MediaFiles addMediaFilesToDb(Long companyId,String fileMd5,UploadFileParamsDto uploadFileParamsDto,String bucket,String objectName){
         //从数据库查询文件
@@ -170,7 +173,7 @@ public class MediaFileServiceImpl implements MediaFileService {
         return mediaFiles;
     }
 
-    @Transactional
+
     @Override
     public UploadFileResultDto uploadFile(Long companyId, UploadFileParamsDto uploadFileParamsDto, String localFilePath) {
         File file = new File(localFilePath);
@@ -194,7 +197,7 @@ public class MediaFileServiceImpl implements MediaFileService {
         //文件大小
         uploadFileParamsDto.setFileSize(file.length());
         //将文件信息存储到数据库
-        MediaFiles mediaFiles = addMediaFilesToDb(companyId, fileMd5, uploadFileParamsDto, bucket_mediafiles, objectName);
+        MediaFiles mediaFiles = currentProxy.addMediaFilesToDb(companyId, fileMd5, uploadFileParamsDto, bucket_mediafiles, objectName);
         //准备返回数据
         UploadFileResultDto uploadFileResultDto = new UploadFileResultDto();
         BeanUtils.copyProperties(mediaFiles, uploadFileResultDto);
