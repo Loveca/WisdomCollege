@@ -122,3 +122,13 @@ Content-Type: application/json
   "auditStatus": "202002",
   "courseName": ""
 }
+
+### 课程计划绑定视频
+POST {{media_host}}/media/teachplan/association/media
+Content-Type: application/json
+
+{
+  "mediaId": "",
+  "fileName": "",
+  "teachplanId": ""
+}
