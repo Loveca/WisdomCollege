@@ -74,10 +74,12 @@ public interface MediaFileService {
      * @param uploadFileParamsDto 文件信息
      * @return com.xuecheng.base.model.RestResponse
      */
-    public RestResponse mergechunks(Long companyId,String fileMd5,int chunkTotal,UploadFileParamsDto uploadFileParamsDto);
+    RestResponse mergechunks(Long companyId,String fileMd5,int chunkTotal,UploadFileParamsDto uploadFileParamsDto);
 
-    public File downloadFileFromMinIO(String bucket, String objectName);
+    File downloadFileFromMinIO(String bucket, String objectName);
 
-    public boolean addMediaFilesToMinIO(String localFilePath,String mimeType,String bucket, String objectName);
+    boolean addMediaFilesToMinIO(String localFilePath,String mimeType,String bucket, String objectName);
 
+    //根据文件id查询媒资信息
+    MediaFiles getFileById(String mediaId);
 }
