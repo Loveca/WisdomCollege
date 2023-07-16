@@ -49,7 +49,9 @@ public class UserServiceImpl implements UserDetailsService {
         }
 
         //认证方法
+        //认证类型
         String authType = authParamsDto.getAuthType();
+        //根据认证类型从Spring容器中拿到对应的bean
         AuthService authService =  applicationContext.getBean(authType + "_authservice",AuthService.class);
         XcUserExt user = authService.execute(authParamsDto);
 
