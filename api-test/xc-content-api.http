@@ -139,3 +139,14 @@ GET http://localhost:63040/content/course/2
 ### 携带token访问资源服务
 GET http://localhost:63040/content/course/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODk1MTY5MjMsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6ImY5OTZiZDhmLTg1OWEtNGU4YS04ZDc3LWU0ZmRmMTkzNDY4MCIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.TOOwbdHlNKVkQlmwxcWPDEkF-c8-Mr5xQ_rSrHE9IYs
+
+
+
+### 携带token访问资源服务
+GET {{gateway_host}}/content/course/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODk1MTY5MjMsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6ImY5OTZiZDhmLTg1OWEtNGU4YS04ZDc3LWU0ZmRmMTkzNDY4MCIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.TOOwbdHlNKVkQlmwxcWPDEkF-c8-Mr5xQ_rSrHE9IYs
+
+
+
+
+
